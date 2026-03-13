@@ -5,6 +5,11 @@
 }
 
 body{
+
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #001220, #001f3f, #000000);
+    background-attachment: fixed;
     font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow-x:hidden;
     padding-top:110px;
