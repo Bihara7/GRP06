@@ -8,6 +8,28 @@
         <link rel="stylesheet" href="style.css">
         <style>
 
+            body {
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                background: linear-gradient(to bottom, #001220, #001f3f, #000000);
+                color: white;
+                background-attachment: fixed
+            }
+
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('images/bg1.png');
+                background-size: cover;
+                opacity: 0.3;
+                z-index: -1;
+                pointer-events: none;
+            }
+
                         
             .title{
                 color: white;
@@ -42,13 +64,13 @@
 
             .main-topic-title {
                 text-align: center;
-                color: skyblue;
-                font-size: 48px;
-                margin-top: 50px;
-                margin-bottom: 20px;
+                color: lightblue;
+                font-size: 36px;
+                margin-top: 0;
+                margin-bottom: 30px;
                 font-family: 'Arial', sans-serif;
-                letter-spacing: 2px;
-                text-shadow: 1px 1px 2px black;
+                text-transform: uppercase;
+                
             }
 
             .cards {
@@ -62,7 +84,7 @@
 
             .card2 {
                 border: none;
-                background-color:black;
+                background-color:rgb(54, 54, 54);
                 opacity: 0.9;
                 backdrop-filter: blur(5px);
                 border-radius: 10px;
@@ -123,7 +145,7 @@
             }
 
             .card2:hover {
-                box-shadow: 0 15px 30px lightblue;
+                box-shadow: 0px 1px 10px 1px lightblue;
                 opacity: 1;
                 
             }
@@ -243,7 +265,7 @@
 
             .explore-card {
                 border: none;
-                background-color:black;
+                background-color:rgb(54, 54, 54,);
                 backdrop-filter: blur(5px);
                 border-radius: 10px;
                 padding: 0 0 30px 0;
@@ -267,9 +289,28 @@
             .explore-card h3 {
                 text-align: center;
                 font-size: 20px;
-                margin-top: 0;
-                color: lightblue;
+                margin-top: 20px;
+                color: white;
                 padding:0 25px;
+            }
+
+            .sub-topic-title {
+                text-align: center;
+                color: lightblue;
+                font-size: 32px;
+                margin-top: 0;
+                margin-bottom: 30px;
+                font-family: 'Arial', sans-serif;
+                text-transform: uppercase;
+            }
+
+            .intro-text {
+                max-width: 95%;
+                margin: 0 auto 40px auto;
+                font-size: 18px;
+                line-height: 1.6;
+                color: white;
+                text-align: center;
             }
  
         
@@ -339,7 +380,11 @@
             </div>
         </section>
 
-<h1 class="main-topic-title">Preserving Our Blue Planet</h1><br>
+<h1 class="main-topic-title">Preserving Our Blue Planet</h1>
+<section class="intro-text">
+    <p>The ocean is the lifeblood of our world, covering more than 70% of Earth’s surface and generating at least half of the oxygen we breathe. From the vibrant biodiversity of coral reefs to the vast, open currents that regulate our global climate, these waters are essential for all life on land. However, the delicate balance of marine ecosystems is currently under siege from plastic pollution, overfishing, and the rapid onset of climate change. Protecting our oceans is no longer an option it is a necessity. By making sustainable choices today, we can ensure that the "blue heart" of our planet remains resilient and thriving for generations to come.</p>
+
+</section>
 
 
             <section class="cards">
@@ -394,9 +439,12 @@
                     </ul>
                     
                 </div>
-            </section>
+            </section><br><br><br><br>
 
-            <h1 class="main-topic-title">Explore the Horizon</h1><br>
+            <h1 class="main-topic-title">Explore the Horizon</h1>
+            <section class="intro-text">
+                <p>To truly protect what lies beneath the waves, we must look beyond the surface and into the future of marine science. Exploring the horizon means diving into the specific targets of Sustainable Development Goal 14, where technology and research meet environmental action. Whether it is monitoring the shifting chemistry caused by ocean acidification or building a sustainable Blue Economy that supports coastal communities, innovation is our greatest tool. This section highlights the critical frontiers of ocean conservation, focusing on the scientific breakthroughs and global strategies required to restore the health of our vast and mysterious abyss.</p>
+            </section>
 
             <section class="explore-grid">
                 <div class="explore-card">
@@ -423,6 +471,19 @@
                     <input type="button" class="learn-more-btn" value="Learn More" onclick="window.location.href='conservation.html'">
                 </div>
             </section>
+
+
+            <br><br><br><br><br>
+
+            <section class="navigate">
+                <div class="navigate-card">
+                    <h3 class="sub-topic-title">Navigate the Horizon</h3><br>
+                    <input type="button" class="learn-more-btn" value="Go to Impact Simulator" onclick="window.location.href='ais.html'">
+                    <input type="button" class="learn-more-btn" value="Go to Gallery" onclick="window.location.href='gallery.html'">
+                </div>
+            </section>
+
+
         </main>
 
 
