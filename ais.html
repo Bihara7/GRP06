@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Horizon</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #001220, #001f3f, #000000);
+            color: white;
+            background-attachment: fixed
+        }
+
+        .ais-header h1{
+            color: skyblue;
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .ais-header p {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 40px;
+
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(6, 46, 61);
+            margin: 40px 0;
+        }
+
+        .action-method{
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            text-align: center;
+            background-color: #001220;
+            opacity: 0.9;
+            margin: 0 40px;
+            border-radius: 15px;
+            border: 1px solid skyblue;
+            margin-bottom: 40px;
+        }
+
+        .action-method h2 {
+            color: skyblue;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .action-method p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .simulator-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(2, minmax(380px, 1fr));
+
+            padding: 0 40px;
+        }
+
+        .simulator-grid .action-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            
+        }
+
+        .simulator-grid .action-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .simulator-grid .action-card h3 {
+            color: skyblue;
+            margin-bottom: 10px;
+        }
+
+        .simulator-grid .action-card p {
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .simulator-grid .action-card.selected {
+            background: rgba(0, 191, 255, 0.2);
+            border: 2px solid skyblue;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(135, 206, 235, 0.4);
+        }
+
+        .feedback-area {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid skyblue;
+            text-align: center;
+            margin: 40px 40px ;            
+        }
+
+
+        .feedback-area h2 {
+            color: skyblue;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-area .reset-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .feedback-area .reset-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: skyblue 0px 0px 10px;
+        }
+
+        .score-display {
+            font-size: 2.5rem;
+            color: skyblue;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        #total-score {
+            font-size: 3rem;
+            color: skyblue;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+            .simulator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .action-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: skyblue;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+            <nav>
+                <a href="home.html"><img src="images/LOGOW.png" alt="Blue Horizon Logo - https://pin.it/4px63zw2t"></a>
+
+                <div class="spacer"></div>
+
+                    <a class="navbar" href="home.html">Home</a>
+                    <a class="navbar active" href="ais.html">Impact Simulator</a>
+                    <a class="navbar" href="gallery.html">Gallery</a>
+                    <a class="navbar" href="profile.html">Profile</a>
+                    <a class="navbar" href="feedback.html">Feedback</a>
+                    <a class="navbar" href="team.html">Team</a>
+                    <a class="navbar" href="sitemap.html">Sitemap</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="ais-header">
+                <h1>Impact Simulator</h1>
+                <p>Select the ocean-positive actions you commit to taking. Every choice adds up - see how your impact grows</p>
+            </div>
+
+            <hr>
+
+            <div class="action-method">
+                <h2>How It Works</h2>
+                <p>Click on the actions below to add them to your impact score. Each action has a point value based on its positive effect on ocean conservation. The more actions you select, the higher your score - and the greater your impact!</p>
+            </div>
+
+            <div class="simulator-grid">
+                <div class="action-card" onclick="updateImpact(this,4)">
+                    <img src="images/ais1.jpg" alt="Use Reusable Bags - https://unsplash.com/photos/jute-bags-with-printed-designs-hanging-in-sunlight-CqHvvCB1WgE">
+                    <h3>Use Reusable Bags</h3>
+                    <p>Commit to using reusable bags for shopping to reduce plastic waste.</p>
+                    <p><strong>Impact: 4 Points</strong></p>
+                </div>
+
+                <div class="action-card" onclick="updateImpact(this,5)">
+                    <img src="images/ais2.jpg" alt="Participate in Beach Cleanups - https://unsplash.com/photos/man-in-blue-crew-neck-t-shirt-holding-clear-plastic-bottle--h4B4-jzfnw">
+                    <h3>Participate in Beach Cleanups</h3>
+                    <p>Join local beach cleanup events to help remove plastic from shorelines.</p>
+                    <p><strong>Impact: 5 Points</strong></p>
+                </div>
+
+                <div class="action-card" onclick="updateImpact(this,3)">
+                    <img src="images/ais3.jpg" alt="Choose Sustainable Seafood - https://unsplash.com/photos/orange-and-white-fish-on-white-and-black-pebbles-tHjXXy1kk_Q">
+                    <h3>Choose Sustainable Seafood</h3>
+                    <p>Opt for sustainably sourced seafood to support ocean-friendly fishing practices.</p>
+                    <p><strong>Impact: 3 Points</strong></p>
+                </div>
+
+                <div class="action-card" onclick="updateImpact(this,4)">
+                    <img src="images/ais4.jpg" alt="Reduce Single-Use Plastics - https://unsplash.com/photos/a-wooden-sign-that-says-stop-plastic-save-earth-lf7UohVEk44">
+                    <h3>Reduce Single-Use Plastics</h3>
+                    <p>Avoid single-use plastics like straws and cutlery to minimize ocean pollution.</p>
+                    <p><strong>Impact: 4 Points</strong></p>
+                </div>
+
+                <div class="action-card" onclick="updateImpact(this,5)">
+                    <img src="images/ais5.jpg" alt="Support Ocean Conservation - https://unsplash.com/photos/body-of-water-during-golden-hour-oQl0eVYd_n8">
+                    <h3>Support Ocean Conservation</h3>
+                    <p>Donate to or volunteer with organizations working to protect marine ecosystems.</p>
+                    <p><strong>Impact: 5 Points</strong></p>
+                </div>
+
+                <div class="action-card" onclick="updateImpact(this,4)">
+                    <img src="images/ais6.jpg" alt="Educate Others - https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-large-aquarium-o2W3NlKlP0o">
+                    <h3>Educate Others</h3>
+                    <p>Share information about ocean conservation with friends and family.</p>
+                    <p><strong>Impact: 3 Points</strong></p>
+                </div>
+
+                <div class="action-card" onclick="updateImpact(this,3)">
+                    <img src="images/ais7.jpg" alt="Help Combat Climate Change - https://unsplash.com/photos/a-large-amount-of-ice-floating-on-top-of-a-body-of-water-y9EVABdWo90">
+                    <h3>Help Combat Climate Change</h3>
+                    <p>Take steps to reduce your carbon emissions and support climate action.</p>
+                    <p><strong>Impact: 2 Points</strong></p>
+                </div>
+
+                <div class="action-card" onclick="updateImpact(this,4)">
+                    <img src="images/ais8.jpg" alt="Engage in Fundraising - https://unsplash.com/photos/group-of-people-on-beach-during-daytime-uXfYLTmF6fo">
+                    <h3>Engage in Fundraising</h3>
+                    <p>Support ocean conservation efforts through donations and fundraising activities.</p>
+                    <p><strong>Impact: 4 Points</strong></p>
+
+                </div>
+
+            </div>
+
+                <div class="feedback-area">
+                    <h2>Your Sustainability Impact</h2>
+                    <div class="score-display" id="total-score">0</div>
+                    <p id="impact-level">Impact Level: None Selected</p>
+                    <p id="impact-message">Start clicking cards to calculate your impact!</p>
+                    <button class="reset-btn" onclick="resetSimulator()">Reset Actions</button>
+                </div>
+        </main>
+
+        <footer>
+            <p>A University of Westminster student project promoting action on UN Sustainable Development Goal 14.</p>
+            <p>© 2026 Blue Horizon | University of Westminster | 4COSC011W</p>
+
+            <p>Student Name</p>
+            <a href="pageEditor_ST1.html">Page Editor</a>
+            <a href="validation_ST1.html">Validation</a>
+        </footer>
+
+        <Script>
+            let totalImpact = 0;
+
+            function updateImpact(cardElement, points) {
+                const isSelected = cardElement.classList.toggle('selected');
+
+                // Update total impact score based on selection
+
+                if (isSelected) {
+                    totalImpact += points;
+                } else {
+                    totalImpact -= points;
+                }
+
+                // Update the displayed total impact score
+                document.getElementById('total-score').textContent = totalImpact;
+                updateFeedback();
+            }
+
+            function updateFeedback(){
+
+                const levelText = document.getElementById('impact-level');
+                const msgText = document.getElementById('impact-message');
+                const body = document.body;
+
+                if (totalImpact === 0) {
+                    levelText.textContent = "Impact Level: None Selected";
+                    msgText.textContent = "Start clicking cards to calculate your impact!";
+                    body.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
+                } else if (totalImpact <= 10) {
+                    levelText.textContent = "Impact Level: Low Impact";
+                    msgText.textContent = "Great start! Your actions are making a positive difference for our oceans.";
+                    body.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
+                } else if (totalImpact <= 20) {
+                    levelText.textContent = "Impact Level: Moderate Impact";
+                    msgText.textContent = "Amazing! Your commitment is helping to protect marine life and ecosystems.";
+                    body.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
+                } else {
+                    levelText.textContent = "Impact Level: High Impact";
+                    msgText.textContent = "Incredible! You are a true champion for ocean conservation!";
+                    body.style.background = "linear-gradient(to bottom, #001220, #001f3f, #000000)";
+                }
+            }
+
+            function resetSimulator() {
+                totalImpact = 0;
+                document.getElementById('total-score').textContent = totalImpact;
+                updateFeedback();
+
+                // Remove 'selected' class from all action cards
+                const cards = document.querySelectorAll('.action-card');
+                cards.forEach(card => card.classList.remove('selected'));
+            }
+
+
+        </Script>
+
+</body>
+</html>
