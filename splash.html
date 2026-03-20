@@ -8,13 +8,17 @@
 
     <Style>
         body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #001220, #001f3f, #000000);
-            color: white;
-            background-attachment: fixed;
-            padding: 20px;
-        }
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #001220, #001f3f, #000000);
+    color: white;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    height: 100vh;             /* full screen height */
+}
         
         .logo{
             margin-top: 20px;
@@ -35,8 +39,8 @@
             box-shadow: 0 4px 8px black;
             color: white;
             max-width: 900px;
+            width: 90%;
             height: auto;
-            margin: 50px auto;
             text-align: center;
         }
         .members{
@@ -45,20 +49,25 @@
         .members h3{
             text-align: left;
             margin-left: 20px;
+            font-size: 18px;
         }
 
         .cardRow{
             display: flex;
-            gap: 30px;
+            gap: 10px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .card2{
             background: linear-gradient(to bottom, #001220, #001f3f, #000000);
             border: none;
             border-radius: 10px;
-            padding:0px 15px 0px 15px;
+            padding:0px 40px 0px 40px;
             box-shadow: 0 4px 8px black;
+        }
+        .mission{
+            font-weight: bold;
         }
 
         .card2 hr{
@@ -91,7 +100,7 @@
         }
        
         .bar{
-            width:300px;
+            width: 80%;
             height:20px;
             background:#333;
             margin:20px auto;
@@ -121,6 +130,7 @@
             z-index:-1;
             filter:brightness(0.2); 
         }
+  
     </Style>
 </head>
 
@@ -133,7 +143,7 @@
     <hr>
     
     <br>
-    <p>Our mission is to promote sustainable technology solutions aligned with global development goals.</p>    
+    <p class="mission">Our mission is to promote sustainable technology solutions aligned with global development goals.</p>    
     <div class="bar">
         <div class="fill"></div>
     </div>
