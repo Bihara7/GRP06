@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - H.V.M.D.Perera</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+    
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+
+    <header id="top">
+            <nav>
+                <a href="splash.html"><img src="images/LOGOW.png" alt="Blue Horizon Logo - https://pin.it/4px63zw2t"></a>
+
+                <div class="spacer"></div>
+
+                    <a class="navbar active" href="home.html">Home</a>
+                    <a class="navbar" href="ais.html">Impact Simulator</a>
+                    <a class="navbar" href="gallery.html">Gallery</a>
+                    <a class="navbar" href="profile.html">Profile</a>
+                    <a class="navbar" href="feedback.html">Feedback</a>
+                    <a class="navbar" href="team.html">Team</a>
+                    <a class="navbar" href="sitemap.html">Sitemap</a>
+            </nav>
+        </header>
+
+    <section class="stud">
+        <h2>H.V.M.D.Perera, Blue Horizon, Student_1</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section>
+                <h2 id="home">Home page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Home Page is the entry point for the 'Blue Horizon' project. The idea behind this page is to engage users with the urgency of UN Sustainable Development Goal 14, 'Life Below Water,' through immersive visual storytelling and data.</p> 
+                    
+                    <h3>Accessibility</h3>
+                        <p>The page uses a modular design approach, combining high-impact hero elements with informative card grids to organize complex environmental data.</p>
+                        <h4>Structural Logic (HTML)</h4>
+                        <ul>
+                            <li><b>Hero Section</b> : This section uses a containerized approach to overlay a high-definition video background ('.videH') with a centered text card. This ensures the key messege is legible regardless of the video content. </li>
+                            <li><b>Static Box ('.stat-box')</b>: Utilizes a horizontal layout to present critical data points (71%, 8M tons, etc.) in a scannable format. This helps the users digest the scale of the problem quikly before moving to detailed content</li>
+                            <li><b>Card-Based Content ('.cards' and '.explore-grid')</b>: These sections use repeating 'div' structures to present "Why oceans matter" and specific sub-topics. This modularity makes the code easy to maintain and scale.</li>
+                            <li><b>Interactive Buttons</b>: Instead of standard text links, 'nput type="button"' is used for primary calls to action, such as "Learn More," to provide a more app-like interactive feel.</li>
+                        </ul>
+
+                        <h4>Styling and Design (CSS)</h4>
+
+                        <ul>
+                            <li><b>Backdrop Filtering:</b> The '.card2' and '.explore-card' classes utilize 'backdrop-filter: blur(5px)'. This modern CSS property allows the background to remain visible while blurring the area directly behind the card, significantly improving text contrast.</li>
+                            <li><b>Visual Hierarchy:</b> Differentiation between '.main-topic-title' and '.sub-topic-title' (using size and case transformations) helps guide the user's eye through the narrative of the page.</li>
+                            <li><b>Transitions:</b> The ':hover' effects on '.card2' (box-shadow and opacity changes) and '.learn-more-btn' (color inversion) provide visual feedback that improves the user's sense of interaction.</li>
+                            <li><b>Fixed Backgrounds:</b> The 'body::before' pseudo-element with 'background-attachment: fixed' allows the background image to stay in place while content scrolls over it, adding a sense of physical depth to the website.</li>
+                    
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST1.html#splashVal">Validation Page Student 1</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="home.html">Home Page</a></p>
+            </section>
+
+            <section>
+                <h2 id="gallery">Gallery Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Ocean Awareness Gallery is designed to be an interactive visually immersive experience that aligns with the "Life Below Water" theme. The implementation relies on a "Card-to-Modal" workflow where condensed information expands into a detailed view upon user interaction.</p> 
+
+                        <h4>Structural Logic (HTML)</h4>
+                        <ul>
+                            <li><b>header and nav</b>: These provide consistent site-wide orientation. The active class on the Gallery link serves as a visual "You Are Here" marker improving user flow.</li>
+                            <li><b>section class="cards"</b>: Acts as a flex-container for the gallery items. Each gallery item is contained within a 'div' using custom data attributes (e.g., data-title, data-desc). This logic allows JavaScript to treat the HTML as a mini-database pulling content into the modal dynamically without needing separate pages for each image.</li>
+                            <li><b>'video' with autoplay loop muted</b>: This creates a dynamic background. Using the muted attribute is a functional necessity; most modern browsers block autoplaying videos that have active audio to prevent a poor user experience.</li>
+                            <li><b>div id="galleryModal"</b>: This is a hidden structural element. It remains out of sight until triggered at which point it acts as an overlay to focus the user’s attention on a single topic. </li>
+                        </ul>
+
+                        <h4>Styling and Design (CSS)</h4>
+                        <ul>
+                            <li><b>display: flex and flex-wrap: wrap</b>: These properties ensure the gallery is responsive. As the viewport narrows, cards automatically wrap to the next line, maintaining a clean grid on both mobile and desktop.</li>
+                            <li><b>background: linear-gradient</b>: The transition from deep navy to black mimics the "Twilight Zone" of the ocean, reinforcing the project’s environmental theme through color psychology.</li>
+                            <li><b>position: fixed and z-index: -1</b>: These are used for the background video. Fixing the position ensures the video stays put while the user scrolls, while a negative z-index ensures it stays behind all text and interactive elements.</li>
+                            <li><b>backdrop-filter: blur(5px)</b>: Applied to the cards and modal this creates a "glassmorphism" effect. It improves readability by softening the background video's movement behind the text.</li>
+                        </ul>
+
+                    <h3>Accessibility</h3>
+                        <p>Accessibility was a primary consideration to ensure the gallery is usable for all visitors including those using assistive technologies:</p>
+                        
+                        <ul>
+                            <li><b>Alt Text Strategy</b>: Every 'img' tag includes descriptive alt attributes. This ensures that screen reader users receive the same context regarding marine life (e.g., "Photo of yellow fishes near corals") as sighted users.</li>
+                            <li><b>Interactive Feedback</b>: While the scale transformation (scale(1.05)) is a visual cue, the inclusion of a cursor: pointer property provides a functional cue that the cards are interactive elements.</li>
+                            <li><b>Color Contrast</b>: The use of light blue and white text against a dark desaturated background ensures high contrast meeting readability standards for users with visual impairments.</li>
+                            <li><b>Modal Controls</b>: The modal includes a prominent "Close" button (&times;), and a JavaScript listener allows users to click outside the content area to exit, providing multiple intuitive ways to navigate back to the main gallery.</li>
+                            <li><b>Customization Tools</b>: The "Change Font" and "Change Color" buttons in the modal allow users to adjust the reading environment to their personal needs (e.g., switching to a monospaced font or a high-contrast dark theme).</li>
+                        </ul>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST1.html#volunteerVal">Validation Page Student 1</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="gallery.html">Gallery</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>The Marine Pollution Content Page is designed to deliver dense educational information in a readable high-impact format. It utilizes a "layered" visual approach to separate the core educational content from the atmospheric background.</p>
+
+                        <h4>HTML Structure and Logic</h4>
+
+                        <ul>
+                            <li><b>article</b>: This semantic tag is used for the .article-container because the content is a self-contained independent report on marine pollution. This helps search engines and screen readers identify the primary focus of the page.</li>
+                            <li><b>section class="content-hero"</b>: This creates a focused introduction. By grouping the 'h1' a summary paragraph and the primary "hero" image it establishes the context immediately before diving into technical details.</li>
+                            <li><b>strong and ul</b>: These are used strategically to break up walls of text. 'strong' highlights critical statistics (e.g., 8 million metric tons), while 'ul'  categorizes different pollution types making the information "scannable."</li>
+                        
+                        </ul>
+
+                        <h4>CSS Styling and Design Choices</h4>
+
+                        <ul>
+
+                            <li><b>rgba(0, 0, 0, 0.7) and backdrop-filter</b>: blur(10px): These properties create the semi-transparent "frosted glass" container. The transparency keeps the user connected to the ocean-themed background while the blur and dark tint ensure the white text remains legible.</li>
+                            <li><b>background-attachment: fixed </b>: Applied to the body this keeps the background gradient stationary while the content scrolls over it creating a sense of depth and immersion.</li>
+                            <li><b>linear-gradient HR</b>: Instead of a standard line the 'hr' uses a transparent-to-skyblue gradient. This acts as a soft visual "breather" between heavy sections without creating a harsh border.</li>
+                            <li><b>object-fit: cover </b>: Applied to the .mid-img this ensures that the hero image fills its container without being distorted or stretched regardless of the screen size.</li>
+                            <li><b>transition: 0.3s and box-shadow </b>: These are used on the .back-btn to provide smooth interactive feedback. The "glow" effect on hover mirrors the bioluminescent or shimmering themes of the ocean.</li>
+
+                        </ul>
+
+
+                    <h3>Accessibility</h3>
+                        <p>Specific measures were taken to ensure this information is accessible to all users:</p>
+                        <ul>
+
+                            <li><b>Semantic Hierarchy</b>: The page uses a logical heading structure ('h1' for the title, followed by 'h2' for sub-sections). This allows screen reader users to skip directly to specific topics like "Human Health Consequences."</li>
+                            <li><b>Legibility and Contrast</b>: White text on a 70% opaque black background provides a high contrast ratio meeting WCAG standards for readability. The line height is set to 1.8 to prevent "text crowding" which assists users with dyslexia or visual impairments.</li>
+                            <li><b>Descriptive Alt Text</b>: Images include meaningful descriptions (e.g., "Plastic Waste near body of water") rather than generic filenames providing context for users who cannot see the images.</li>
+                            <li><b>Non-Visual Navigation</b>: The "Back to Home" button uses a clear descriptive label rather than a vague "Go Back" ensuring users know exactly where the link will take them.</li>
+
+                        </ul>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST1.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="content_pg1.html">Content Page Student 1</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+
+                <h4>Challenges Faced</h4>       
+                <p><b>1. Synchronizing Dynamic Modal Content</b></p>
+                <p>The Challenge: Initially the Gallery page required hard-coding a separate modal for every single image card. This led to "code bloat" making the HTML difficult to manage and increasing the risk of broken links if a description changed.</p>
+                <p>The Resolution: I shifted to a Data-Driven Logic using JavaScript. By storing the title description, and image path within HTML5 data attributes (e.g., data-title, data-desc) on the card itself, I wrote a single, reusable JavaScript function. This function dynamically "injects" the correct content into one master modal template whenever a card is clicked.</p>
+                <p><b>2. Ensuring Readability Over Dynamic Backgrounds</b></p>
+                <p>The Challenge: The background video and deep-sea gradients while visually striking, made the white text difficult to read in certain sections. Standard black text was invisible and pure white text often "vibrated" against the moving video pixels.</p>
+                <p>The Resolution: I implemented Glassmorphism techniques. By using rgba(0, 0, 0, 0.7) for container backgrounds combined with backdrop-filter: blur(10px) I created a "shield" for the text. This allowed the background colors to peak through while providing a stable high-contrast surface for the typography.</p>
+                <p><b>3. Responsive Scaling of Media</b></p>
+                <p>The Challenge: The "Hero" images and the background video often lost their focal points or became distorted when switching from a wide desktop monitor to a narrow mobile screen.</p>
+                <p>The Resolution: I utilized the object-fit: cover CSS property. This ensured that images and videos filled their assigned dimensions without stretching. Additionally, I used Flexbox (display: flex with flex-wrap: wrap) to allow gallery cards to flow naturally into a single column on smaller devices without needing complex math.</p>
+
+                <h4>Lessons Learned</h4>
+                <p><b>Semantic HTML is a Foundation, Not an Option</b></p>
+                <p>Overcoming accessibility hurdles taught me that using the right tags (like "article" for the report and "nav" for links) isn't just for organization it's the primary way to ensure the site is "perceivable" for screen reader users. I learned that building with accessibility in mind from the start is much easier than trying to "fix" it later.</p>
+                <p><b>The Power of "Dry" Code</b></p>
+                <p>(Don't Repeat Yourself). The transition from multiple modals to a single dynamic modal taught me the value of efficient scripting. It made the project much easier to debug and showed me how JavaScript can be used to keep HTML clean and manageable.</p>
+                <p><b>User Experience (UX) vs. Visual Flare</b></p>
+                <p>I learned that while high-end features like autoplaying videos look great, they must be implemented responsibly (using muted and playsinline). A design that interrupts a user’s experience or makes content unreadable is an unsuccessful design, no matter how "cool" it looks.</p>
+           
+            </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                    <p>The implementation of the Blue Horizon project was guided by a strict adherence to the Janet Acceptable Use Policy (AUP) and the University of Westminster’s digital governance standards. By focusing exclusively on the educational dissemination of UN Sustainable Development Goal 14 the site remains non-commercial and aligned with the network's mission for research and learning. To ensure legal and ethical compliance I prioritized intellectual property rights by providing clear attributions for all external media assets and maintained a high standard of accessibility through semantic HTML5. Ultimately the project demonstrates a professional commitment to network integrity and user inclusivity ensuring that the content is both secure and perceivable for a diverse academic audience.<a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+
+                    
+            </section>
+
+            <section>
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
+                    Requirements:
+                        <ul> 
+                            <li>A minimum of six (6) group meetings must be recorded.</li>
+                            <li>Each student must provide their own account of the meetings.</li>
+                            <li>The log must focus on individual contribution, not just group activity.</li>
+                        </ul>
+                        <p>Feel free to follow the example table structure below:</p>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20 Feb 2026</td>
+                                    <td>Online (Via Google Meet)</td>
+                                    <td>Introduction of the team members. Finalize site structure and navigation.</td>
+                                    <td>Yes</td>
+                                    <td>I proposed the global navigation bar layout and volunteered to develop the Interactive Gallery page.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>23 Feb 2026</td>
+                                    <td>Online </td>
+                                    <td>Design Review</td>
+                                    <td>Yes</td>
+                                    <td>Defined the CSS color variables and shared the "glassmorphism" code snippets.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>05 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Progress Review</td>
+                                    <td>Yes</td>
+                                    <td>Presented the functional prototype of the dynamic modal system for feedback.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>15 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Debugging Session</td>
+                                    <td>Yes</td>
+                                    <td>Resolved responsiveness issues within the flexbox grid to ensure mobile compatibility.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>21 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Content Review</td>
+                                    <td>Yes</td>
+                                    <td>Finalized the "Marine Pollution" article and verified contrast ratios for accessibility.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>20 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Final Validation</td>
+                                    <td>Yes</td>
+                                    <td>Conducted the final W3C validation and Janet compliance audit for the submission.</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                    <ul class="ref">
+                        <h4>Media & Digital Asset References (Home Page)</h4>
+
+                        <li>W3Schools (2026) <i>HTML Video.</i> Available at:<a href="#"> https://www.w3schools.com/html/html5_video.asp</a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Code With Bubb (2022) <i>Learn to code a cool Video Background with HTML/CSS & JavaScript. YouTube.</i> Available at:<a href="#"> https://www.youtube.com/watch?v=m7utzGh3SXY</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>G., H. (2021). Gray and black fish under water. <i>Unsplash.</i> Available at: <a href="#">https://unsplash.com/photos/gray-and-black-fish-under-water-hqAGgNsMpEY</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>Pinterest. (2026). <i>Ocean and Taking Action Visuals. [Referencing car1.jpg and car3.jpg].</i> Available at:<a href="#"> https://pin.it/398zUE7Nq and https://pin.it/1uKDDv5rs</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>S., C. (2022). Red ship on sea under white clouds during daytime. <i>Unsplash.</i> Available at: <a href="#">https://unsplash.com/photos/red-ship-on-sea-under-white-clouds-during-daytime-GQoB3k_u3CQ</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>Unsplash. (2026). <i>Plastic Waste in Water. [Referencing hero1.jpg].</i> Available at: <a href="#">https://unsplash.com/photos/gray-concrete-building-near-body-of-water-during-daytime-p2NXrD49Vnc</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>Unsplash. (2026). <i>Underwater view of a coral reef. [Referencing exp2.jpg].<i> Available at:<a href="#"> https://unsplash.com/photos/an-underwater-view-of-a-coral-reef-in-the-ocean-IocT1BO4yFI</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>Unsplash. (2026). <i>A body of water with debris. [Referencing exp1.jpg].</i> Available at:<a href="#"> https://unsplash.com/photos/a-body-of-water-that-has-a-bunch-of-things-in-it-CVm_rx7VjGM</a> (Last accessed: 21 Mar 2026).functional.</li>
+                        <li>C.C.(2024) Wallpaper engine anime ocean wallpaper live. <i>Pinterest.</i> Available at: <a href="#">https://pin.it/3IUKPFiVt</a> (Last accessed: 21 Mar 2026).</li>
+
+                        <h4>Media & Digital Asset References (Gallery Page)</h4>
+
+                        <li>Barnes, D. (2021)<i>A bunch of fish that are in some baskets. Unsplash.</i> Available at: <a href="#">https://unsplash.com/photos/a-bunch-of-fish-that-are-in-some-baskets-ccRojCTyOoM </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Estevez, A. (2020) <i>Humpback whale jumping over the sea. Pexels.</i> Available at:<a href="#"> https://www.pexels.com/photo/humpback-whale-jumping-over-the-sea-3309869/ </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Fisk, T. (2020) <i>Green coral reef under water. Pexels.</i> Available at: <a href="#">https://www.pexels.com/photo/green-coral-reef-under-water-668790/ </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Fisk, T. (2020) <i>Brown coral reef under water. Pexels.</i> Available at: <a href="#">https://www.pexels.com/photo/brown-coral-reef-under-water-4618212/ </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Georgiev, Z. (2020) <i>A pod of dolphins swirling in the sea catching forage fish. Pexels.</i> Available at:<a href="#"> https://www.pexels.com/video/a-pod-of-dolphins-swirling-in-the-sea-catching-forage-fish-5608048/ </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Segal, R. (2018) <i>Black and white turtle. Pexels.</i> Available at:<a href="#"> https://www.pexels.com/photo/black-and-white-turtle-1618606/ </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Ungaro, F. (2019) <i>Photo of yellow fishes near corals. Pexels.</i> Available at: <a href="#">https://www.pexels.com/photo/photo-of-yellow-fishes-near-corals-3129556/ </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>Wanda, L. (2019) <i> Piles of garbage by the shore. Pexels.</i> Available at: <a href="#">https://www.pexels.com/photo/piles-of-garbage-by-the-shore-2827735/ </a>(Last accessed: 21 Mar 2026).</li>
+
+                        <h4>Media & Digital Asset References (Content Page_1)</h4>
+
+                        <li>Cousteau, J. (n.d.) <i>Ocean Quote. [Quotation].</i> Available at: <a href="#">https://www.brainyquote.com/quotes/jacques_yves_cousteau_121845 </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>P2NXrD49Vnc (2022) <i>Gray concrete building near body of water during daytime. Unsplash.</i> Available at: <a href="#"> https://unsplash.com/photos/gray-concrete-building-near-body-of-water-during-daytime-p2NXrD49Vnc </a>(Last accessed: 21 Mar 2026).</li>
+                        <li>The Ocean Cleanup (2026) <i>The Ocean Cleanup Project.</i> Available at: <a href="#"> https://theoceancleanup.com/</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>United Nations (2025) <i>UN Global Plastics Treaty.</i> Available at: https:<a href="#">//www.unep.org/inc-plastic-pollution</a> (Last accessed: 21 Mar 2026).</li>
+                        <li>United Nations (2025) Goal 14: Life Below Water. Sustainable Development Goals. Available at: <a href="#">https://sdgs.un.org/goals/goal14</a> (Last accessed: 21 Mar 2026).</li>
+
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                <li>Student 1</li>
+                <ul>
+                        <li><a href="#home">Home page </a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#content">Content</a></li>
+                    </ul>
+                
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                
+                <div class="footer-about">
+                    <h2>Blue Horizon</h2>
+                    <p>Promoting awareness and action for UN Sustainable Development Goal 14: Life Below Water. <br>
+                        Together, we protect our oceans for future generations.</p>
+                </div>
+
+                <div class="footer-name">
+                    <h3>Students Name</h3>
+                    <p>Vimuth Perera</p>
+                    <p>Bihara Jayawardhana</p>
+                    <p>Janin Bandara</p>
+                    <p>Akash Karunakaran</p>
+                </div>
+
+                <div class="footer-Slinks">
+                    <h3>Students</h3>
+                    <a href="pageEditor_ST1.html">Student 1</a>
+                    <a href="pageEditor_ST2.html">Student 2</a>
+                    <a href="pageEditor_ST3.html">Student 3</a>
+                    <a href="pageEditor_ST4.html">Student 4</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Validation</h3>
+                    <a href="validation_ST1.html">Validation 1</a>
+                    <a href="validation_ST2.html">Validation 2</a>
+                    <a href="validation_ST3.html">Validation 3</a>
+                    <a href="validation_ST4.html">Validation 4</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Blue Horizon | University of Westminster</p>
+            </div>
+        </footer>
+</body>
+</html>
