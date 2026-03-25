@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor - Akash Karunakaran | Blue Horizon</title>
+    <link rel="stylesheet" href="css/pageEditor_validator.css">
+</head>
+<body>
+
+    <header id="top">
+        <nav>
+            <a href="home.html"><img src="images/LOGOW.png" alt="Blue Horizon Logo - https://pin.it/4px63zw2t"></a>
+            <div class="spacer"></div>
+            <a class="navbar" href="home.html">Home</a>
+            <a class="navbar" href="ais.html">Impact Simulator</a>
+            <a class="navbar" href="gallery.html">Gallery</a>
+            <a class="navbar" href="profile.html">Profile</a>
+            <a class="navbar" href="feedback.html">Feedback</a>
+            <a class="navbar" href="team.html">Team</a>
+            <a class="navbar" href="sitemap.html">Sitemap</a>
+        </nav>
+    </header>
+
+    <section class="stud">
+        <h2>Akash Karunakaran, Blue Horizon, Student_4</h2>
+    </section>
+
+    <div class="container">
+
+        <main>
+
+            <!-- SITEMAP PAGE -->
+            <section>
+                <h2 id="sitemap">Sitemap Page</h2>
+
+                <h3>Technical Description</h3>
+                <p>The Sitemap page provides a visual overview of the entire Blue Horizon website structure using SVG (Scalable Vector Graphics). The page is built using the shared HTML template, linking to the team's <code>Style.css</code> for consistent styling across the site.</p>
+
+                <p>The SVG element uses a <code>viewBox="0 0 1000 480"</code> attribute with <code>width="100%"</code> and <code>height="auto"</code> set via CSS, which makes the diagram fully responsive and scalable across different screen sizes without losing clarity. All nodes are drawn using SVG <code>&lt;rect&gt;</code> elements with rounded corners using the <code>rx</code> attribute, and connected using <code>&lt;line&gt;</code> elements styled with custom stroke colours and widths. A dashed line using <code>stroke-dasharray</code> visually separates the navigation page tier from the content page tier, making the hierarchy clearer to the user.</p>
+
+                <p>Every node is wrapped in an SVG <code>&lt;a&gt;</code> anchor element with <code>tabindex="0"</code> for keyboard accessibility. Each anchor contains a <code>&lt;title&gt;</code> element for screen readers. A <code>role="img"</code> and <code>aria-label</code> are applied to the entire SVG element. Hover and focus effects are handled via CSS targeting <code>a.smap-node:hover rect</code> and <code>a.smap-node:focus-visible rect</code>, which change the fill to lightblue. The current page (Sitemap) is styled with a lightblue fill and a "YOU ARE HERE" label. A colour-coded legend below explains each node colour.</p>
+
+                <h4>HTML Structure</h4>
+                <ul>
+                    <li><b>SVG element with viewBox</b>: Creates a scalable coordinate system for the diagram that responds to any screen size without losing proportions.</li>
+                    <li><b>&lt;rect&gt; elements</b>: Used to draw each page node as a rounded rectangle. The <code>rx</code> attribute rounds the corners for a modern appearance.</li>
+                    <li><b>&lt;line&gt; elements</b>: Connect the nodes to show relationships. Dashed lines use <code>stroke-dasharray</code> to visually separate the two tiers.</li>
+                    <li><b>&lt;a&gt; anchor elements with tabindex</b>: Wrap each node to make it clickable and keyboard accessible.</li>
+                    <li><b>&lt;title&gt; elements</b>: Provide accessible descriptions for each node for screen reader users.</li>
+                </ul>
+
+                <h4>CSS Techniques</h4>
+                <ul>
+                    <li><b>width: 100% and height: auto</b>: Makes the SVG fully responsive — it scales proportionally to fit any container width.</li>
+                    <li><b>a.smap-node:hover rect and :focus-visible</b>: Changes the node fill colour on hover and focus, providing clear visual interaction feedback.</li>
+                    <li><b>stroke-dasharray</b>: Creates dashed connector lines to visually separate the navigation tier from the content page tier.</li>
+                    <li><b>CSS animation @keyframes fadeIn</b>: Not used on sitemap — used on profile page instead.</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <p>The SVG includes <code>role="img"</code> and a detailed <code>aria-label</code> describing the full diagram to screen reader users. Each clickable node has a <code>&lt;title&gt;</code> element inside its anchor group providing a meaningful description of where that link leads. All nodes have <code>tabindex="0"</code> so keyboard users can navigate between them using the Tab key. Focus states are visible — when a node is focused the rectangle changes colour in the same way as the hover state, implemented using the CSS <code>:focus-visible</code> pseudo-class. Text labels are visible directly in the diagram so no information is conveyed by colour alone.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST4.html#sitemapVal">Validation Page Student 4</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="sitemap.html" target="_blank">Sitemap Page</a></p>
+            </section>
+
+
+            <!-- USER PROFILE PAGE -->
+            <section>
+                <h2 id="profile">User Profile Page</h2>
+
+                <h3>Technical Description</h3>
+                <p>The User Profile page collects information from the user through JavaScript <code>prompt()</code> dialogs as required by the coursework specification — not HTML forms. The page uses a two-column Flexbox layout: a control panel on the left containing buttons and a progress bar, and a profile display on the right that builds progressively as the user completes each step.</p>
+
+                <p>All user data is stored in a single JavaScript object called <code>profileData</code>, with each property initialised to <code>null</code>. A separate object <code>stepDone</code> tracks which of the three steps are complete. The profile-building process has three steps handled by the <code>runStep(stepNumber)</code> function. Step 1 collects basic details (name, username, location), Step 2 collects ocean interests (favourite marine topic, visit frequency, biggest concern), and Step 3 collects actions and pledges (pledge action, people to tell, commitment level). Pressing Cancel on any prompt skips it — the value stays <code>null</code> and that row is hidden using the <code>toggleRow()</code> function which sets <code>display:none</code> on the row.</p>
+
+                <p>The progress bar is updated by <code>updateProgress()</code>, which counts how many of the 9 individual prompts have been answered and calculates a percentage out of 9. This means skipping prompts genuinely reduces the completion percentage. The progress bar uses a CSS gradient fill with a smooth <code>transition: width 0.5s ease</code> animation. Profile sections are hidden initially and revealed by adding the <code>visible</code> CSS class using <code>classList.add()</code>, with a <code>@keyframes fadeIn</code> animation on reveal. Revisit buttons allow users to re-run any step at any time, updating the profile and progress bar with the new data.</p>
+
+                <h4>HTML Structure</h4>
+                <ul>
+                    <li><b>Two-column Flexbox layout</b>: Separates the control panel from the profile display, keeping the interface clean and organised.</li>
+                    <li><b>progress-track and progress-fill divs</b>: Create the custom progress bar — the fill width is controlled dynamically by JavaScript.</li>
+                    <li><b>profile-section divs</b>: One per step, hidden initially using CSS and revealed progressively as steps complete.</li>
+                    <li><b>profile-row divs with id attributes</b>: Each row represents one prompt answer. The <code>toggleRow()</code> function shows or hides each row based on whether the user answered that prompt.</li>
+                    <li><b>ARIA attributes on progress bar</b>: <code>role="progressbar"</code>, <code>aria-valuemin</code>, <code>aria-valuemax</code>, and <code>aria-valuenow</code> updated dynamically by JavaScript.</li>
+                </ul>
+
+                <h4>CSS Techniques</h4>
+                <ul>
+                    <li><b>display: flex with flex-wrap: wrap</b>: Creates the two-column layout that collapses to a single column on smaller screens.</li>
+                    <li><b>@keyframes fadeIn</b>: Fades in each profile section as it becomes visible, making the progressive reveal feel smooth rather than abrupt.</li>
+                    <li><b>transition: width 0.5s ease</b>: Animates the progress bar fill as it grows with each completed prompt.</li>
+                    <li><b>display: none / display: flex</b>: Controls visibility of profile rows — skipped prompts are hidden completely rather than showing a placeholder.</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <p>The progress bar element uses ARIA attributes — <code>role="progressbar"</code>, <code>aria-valuemin</code>, <code>aria-valuemax</code>, and <code>aria-valuenow</code> — which are updated dynamically by JavaScript as the user completes prompts, ensuring screen readers can announce the current completion percentage. All buttons have meaningful visible labels. Instructions within each prompt are written clearly with examples so users understand what input is expected. The active nav link has <code>aria-current="page"</code>.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST4.html#profileVal">Validation Page Student 4</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="profile.html" target="_blank">User Profile Page</a></p>
+            </section>
+
+
+            <!-- CONTENT PAGE -->
+            <section>
+                <h2 id="content">Content Page — Marine Technology</h2>
+
+                <h3>Technical Description</h3>
+                <p>The Content page covers Marine Technology and its role in SDG 14: Life Below Water. It is structured as a long-form article using the HTML <code>&lt;article&gt;</code> element, divided into clearly labelled sections using <code>&lt;h2&gt;</code> headings. Topics covered include Autonomous Underwater Vehicles, ROVs, satellite technology, AI and machine learning, environmental DNA, ocean sensor networks, 3D mapping, and innovative conservation techniques.</p>
+
+                <p>The page uses a glassmorphism-style container with <code>background: rgba(0,0,0,0.7)</code> and <code>backdrop-filter: blur(10px)</code>, giving it a frosted glass appearance consistent with the team's ocean aesthetic. A full-width hero image sits at the top followed by an <code>&lt;hr&gt;</code> element styled as a gradient line using <code>background: linear-gradient(to right, transparent, skyblue, transparent)</code>. All images include descriptive <code>alt</code> text with source references.</p>
+
+                <h4>HTML Structure</h4>
+                <ul>
+                    <li><b>&lt;article&gt; element</b>: Used as the semantic container for the content as it is a self-contained independent piece of writing, which helps search engines and screen readers identify the primary focus of the page.</li>
+                    <li><b>Heading hierarchy</b>: One <code>&lt;h1&gt;</code> for the page title followed by <code>&lt;h2&gt;</code> headings for each section, providing a logical structure for both readability and screen reader navigation.</li>
+                    <li><b>&lt;ul&gt; lists</b>: Used to break up dense text into scannable bullet points, particularly for the AI capabilities section.</li>
+                    <li><b>&lt;strong&gt; elements</b>: Highlight critical statistics and key terms throughout the article.</li>
+                </ul>
+
+                <h4>CSS Techniques</h4>
+                <ul>
+                    <li><b>rgba(0,0,0,0.7) and backdrop-filter: blur(10px)</b>: Creates the glassmorphism container effect — semi-transparent with a blurred background that keeps the ocean theme visible while keeping text readable.</li>
+                    <li><b>linear-gradient HR</b>: Styles the section divider as a soft gradient line from transparent to skyblue, acting as a visual break between sections without a harsh border.</li>
+                    <li><b>object-fit: cover</b>: Applied to the hero image to ensure it fills its container without distortion on any screen size.</li>
+                    <li><b>transition and box-shadow on .back-btn</b>: Provides smooth hover feedback on the Back to Home button.</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <p>All images include meaningful <code>alt</code> text that describes the image content and its source URL. The article uses a logical heading hierarchy — one <code>&lt;h1&gt;</code> for the title followed by <code>&lt;h2&gt;</code> for each section — which supports screen reader navigation. Text uses line-height 1.8 and font-size 18px for comfortable reading. The "Back to Home" button has a clear descriptive label and visible hover feedback.</p>
+
+                <h3>Link to the validation page</h3>
+                <p><a href="validation_ST4.html#contentVal">Validation Page Student 4</a></p>
+
+                <h3>Link to the page</h3>
+                <p><a href="content_pg4.html" target="_blank">Marine Technology Content Page</a></p>
+            </section>
+
+
+            <!-- CHALLENGES -->
+            <section>
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+
+                <h4>Challenges Faced</h4>
+
+                <p><b>1. Learning SVG from scratch</b></p>
+                <p>I had never used SVG before this project. Creating the sitemap required learning how to draw shapes using <code>&lt;rect&gt;</code> and <code>&lt;line&gt;</code> elements, position them using coordinate attributes, and make them interactive with anchor elements and CSS hover states. The hardest part was calculating x and y positions so the connector lines joined nodes correctly. I solved this by sketching the layout on paper first and working out the coordinates manually before writing the code.</p>
+
+                <p><b>2. GitHub conflicts when pushing files</b></p>
+                <p>Several times when I tried to push my files to the team repository I received merge conflict errors because my teammates had pushed changes at the same time. I did not know how to resolve these at first. I learned that running <code>git pull --rebase</code> before pushing merges the remote changes into my local version cleanly, avoiding conflicts. This taught me the importance of always pulling before starting a push session.</p>
+
+                <p><b>3. JavaScript prompt() showing the IP address</b></p>
+                <p>When testing the profile page locally using Live Server, the browser's prompt dialog showed <code>127.0.0.1:5500</code> at the top. I initially thought this was a bug in my code. After researching I found this is a built-in browser security feature that cannot be removed — it tells the user which website is requesting their input. I learned this is expected behaviour and that the specification specifically requires <code>prompt()</code>, so this is the correct approach.</p>
+
+                <p><b>4. Understanding DOM manipulation</b></p>
+                <p>The User Profile page required making elements appear and disappear dynamically without reloading the page. I found it confusing at first to understand how JavaScript could change what was visible in the HTML. Through building the profile page I learned how <code>document.getElementById()</code> selects elements, how <code>classList.add()</code> and <code>classList.remove()</code> apply and remove CSS classes, and how <code>style.display</code> shows or hides elements. By the end of the project I felt much more confident using the DOM to build interactive pages.</p>
+
+                <h4>Lessons Learned</h4>
+                <p><b>Plan before you code.</b> For the SVG sitemap, sketching the layout on paper before writing any code saved a lot of time. Having the coordinates planned out meant I could write the SVG elements confidently without trial and error.</p>
+                <p><b>Version control is essential.</b> The GitHub conflicts taught me that <code>git pull</code> should always come before <code>git push</code>. Working in a team means the repository is always changing and keeping your local copy up to date prevents most conflicts from happening in the first place.</p>
+                <p><b>Read the specification carefully.</b> The prompt() IP address issue showed me the importance of understanding why a tool behaves in a certain way before assuming it is broken. The specification required <code>prompt()</code> specifically, and understanding the browser's security model helped me explain the behaviour rather than trying to fix something that was not broken.</p>
+            </section>
+
+
+            <!-- COMPLIANCE -->
+            <section>
+                <h2 id="compliance">Compliance</h2>
+                <p>All pages I implemented comply with JANET regulations governing the publication of web pages. The content on all three pages is original, appropriate, and does not include any offensive, discriminatory, or unlawful material. All externally sourced images include proper attribution in their <code>alt</code> text with the source URL referenced. No copyrighted material has been reproduced without permission.</p>
+                <p>The User Profile page uses JavaScript <code>prompt()</code> to collect information that is stored only in the browser's memory for the duration of the session and is not sent to any server. This means the pages comply with data protection principles.</p>
+                <p>All pages have been validated against HTML standards using the W3C Markup Validation Service with no errors present. The pages use semantic HTML, include appropriate <code>alt</code> text for all images, and follow basic accessibility principles in line with responsible web publishing practice.</p>
+                <p><a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p>
+            </section>
+
+
+            <!-- GROUP MEETINGS -->
+            <section>
+                <h2 id="group">Group Meetings and Individual Contribution Log</h2>
+                <p>A minimum of six group meetings were held throughout the project. The table below documents my attendance and individual contribution at each meeting.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>20 Feb 2026</td>
+                            <td>Online (Via Google Meet)</td>
+                            <td>Introduction of the team members. Finalise site structure and navigation.</td>
+                            <td>Yes</td>
+                            <td>Agreed to take responsibility for the User Profile and Sitemap pages. Discussed the overall site structure and agreed on page file names.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>23 Feb 2026</td>
+                            <td>Online</td>
+                            <td>Design Review</td>
+                            <td>Yes</td>
+                            <td>Reviewed the team's CSS colour scheme and agreed on the ocean theme. Started planning the SVG sitemap node layout and hierarchy.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>05 Mar 2026</td>
+                            <td>Online</td>
+                            <td>Progress Review</td>
+                            <td>Yes</td>
+                            <td>Showed the team the sitemap SVG draft and received feedback on node colours and connector line layout. Began working on the profile JavaScript prompt logic.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>15 Mar 2026</td>
+                            <td>Online</td>
+                            <td>Debugging Session</td>
+                            <td>Yes</td>
+                            <td>Resolved GitHub merge conflicts when pushing sitemap.html to the repository. Learned to use git pull --rebase before pushing. Continued work on the profile page progress bar.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>20 Mar 2026</td>
+                            <td>Online</td>
+                            <td>Final Validation</td>
+                            <td>Yes</td>
+                            <td>Ran W3C validation on sitemap.html and profile.html. Fixed any errors found and took screenshots for the validation page.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>21 Mar 2026</td>
+                            <td>Online</td>
+                            <td>Content Review</td>
+                            <td>Yes</td>
+                            <td>Finalised the profile page skip and revisit functionality. Reviewed the Marine Technology content page and confirmed all internal links and images were working correctly.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+
+            <!-- REFERENCES -->
+            <section>
+                <h2 id="ref">References</h2>
+                <ul class="ref">
+                    <li>iStock (2025) <i>iStock.</i> Available at: <a href="https://www.istockphoto.com/" target="_blank">https://www.istockphoto.com/</a> (Last accessed: 20 Mar 2026).</li>
+                    <li>Unsplash (2025) <i>Unsplash — Free high-resolution photos.</i> Available at: <a href="https://unsplash.com/" target="_blank">https://unsplash.com/</a> (Last accessed: 20 Mar 2026).</li>
+                    <li>W3Schools (2025) <i>SVG Tutorial.</i> Available at: <a href="https://www.w3schools.com/graphics/svg_intro.asp" target="_blank">https://www.w3schools.com/graphics/svg_intro.asp</a> (Last accessed: 15 Mar 2026).</li>
+                    <li>W3Schools (2025) <i>JavaScript HTML DOM.</i> Available at: <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">https://www.w3schools.com/js/js_htmldom.asp</a> (Last accessed: 15 Mar 2026).</li>
+                    <li>MDN Web Docs (2025) <i>SVG: Scalable Vector Graphics.</i> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank">https://developer.mozilla.org/en-US/docs/Web/SVG</a> (Last accessed: 10 Mar 2026).</li>
+                    <li>MDN Web Docs (2025) <i>Window.prompt().</i> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt</a> (Last accessed: 18 Mar 2026).</li>
+                    <li>United Nations (2025) <i>SDG 14 — Life Below Water.</i> Available at: <a href="https://sdgs.un.org/goals/goal14" target="_blank">https://sdgs.un.org/goals/goal14</a> (Last accessed: 20 Mar 2026).</li>
+                    <li>Duckett, J. (2011) <i>HTML and CSS: Design and Build Websites.</i> John Wiley &amp; Sons Inc., Indianapolis.</li>
+                    <li>Pinterest (2025) <i>Blue Horizon Logo.</i> Available at: <a href="https://pin.it/4px63zw2t" target="_blank">https://pin.it/4px63zw2t</a> (Last accessed: 20 Mar 2026).</li>
+                    <li>Swan, R. (n.d.) <i>Quote on environmental responsibility. BrainyQuote.</i> Available at: <a href="https://www.brainyquote.com" target="_blank">https://www.brainyquote.com</a> (Last accessed: 20 Mar 2026).</li>
+                </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside>
+            <h3>Core pages developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 4 — Akash Karunakaran</li>
+                <ul>
+                    <li><a href="#sitemap">Sitemap</a></li>
+                    <li><a href="#profile">User Profile</a></li>
+                    <li><a href="#content">Content Page</a></li>
+                </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h2>Blue Horizon</h2>
+                <p>Promoting awareness and action for UN Sustainable Development Goal 14: Life Below Water. <br>
+                    Together, we protect our oceans for future generations.</p>
+            </div>
+            <div class="footer-name">
+                <h3>Students Name</h3>
+                <p>Vimuth Perera</p>
+                <p>Bihara Jayawardhana</p>
+                <p>Janin Bandara</p>
+                <p>Akash Karunakaran</p>
+            </div>
+            <div class="footer-Slinks">
+                <h3>Students</h3>
+                <a href="pageEditor_ST1.html">Student 1</a>
+                <a href="pageEditor_ST2.html">Student 2</a>
+                <a href="pageEditor_ST3.html">Student 3</a>
+                <a href="pageEditor_ST4.html">Student 4</a>
+            </div>
+            <div class="footer-links">
+                <h3>Validation</h3>
+                <a href="validation_ST1.html">Validation 1</a>
+                <a href="validation_ST2.html">Validation 2</a>
+                <a href="validation_ST3.html">Validation 3</a>
+                <a href="validation_ST4.html">Validation 4</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Blue Horizon | University of Westminster</p>
+        </div>
+    </footer>
+
+</body>
+</html>
