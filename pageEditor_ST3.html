@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor Student - provide your student name</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+<body>
+    
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+
+    <header>
+            <nav>
+                <a href="splash.html"><img src="images/LOGOW.png" alt="Blue Horizon Logo - https://pin.it/4px63zw2t"></a>
+
+                <div class="spacer"></div>
+
+                    <a class="navbar active" href="home.html">Home</a>
+                    <a class="navbar" href="ais.html">Impact Simulator</a>
+                    <a class="navbar" href="gallery.html">Gallery</a>
+                    <a class="navbar" href="profile.html">Profile</a>
+                    <a class="navbar" href="feedback.html">Feedback</a>
+                    <a class="navbar" href="team.html">Team</a>
+                    <a class="navbar" href="sitemap.html">Sitemap</a>
+            </nav>
+        </header>
+
+    <section class="stud">
+        <h2>Janin Madhurabhashitha, Blue Horizon, Student 3</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section>
+                <h2 id="feedback">Feedback</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Feedback Page is made with our team website template, so it looks the same as the other pages. The page has three main sections.
+                        The first section is a scrollable list that shows many programme cards. Flexbox is used to arrange these cards neatly.Programme cards were built using <strong>Div</strong>
+                        The second section is the reviews area. The review cards can move sideways because the page uses horizontal scrolling.
+                        The third section is the feedback form.<strong>JavaScript</strong> is used to make a live character counter. This counter changes the number while the user is typing.
+                        Buttons and cards have hover animations to make the page feel more interactive.I used input types <strong>text, email, tel, date, and datetime-local 
+                        </strong>and grouped the content using fieldsets.The whole page uses structured HTML, simple CSS for layout and style, 
+                        and JavaScript for small interactive features. This helps the page meet all the coursework requirements.</p>
+                    <p> <strong>HTML Structure </strong><br>
+                        <ul>
+                            <li>Main tags - <b>Header , Nav , Main , Section , Form , Footer</b></li>
+                            <li><b>nav</b> - Holds navigation links such as Home, Gallery, Team, Feedback, etc. This helps users easily move between pages. </li>
+                            <li><b>section</b> - Used to divide the page section (Cards,Reviews,Ratings,Feedback)</li>
+                            <li><b>form</b> - Used to collect user feedback.</li>
+                            <li><b>fieldset and legend - To keep the form clear and organised</b></li>
+                            <li><b>button</b> - Used to submit the form,learn more information,See more reviews </li>
+                            <li><b>select and option</b> - Used to create a dropdown </li>
+                        </ul><br>
+                        <strong>CSS Structure </strong><br>
+                        <ul>
+                            <li>Used a linear gradient background to create an ocean theme design</li>
+                            <li>Used <b>border radius</b> to create rounded corner</li>
+                            <li>Used <b>margin and padding</b> for proper spacing between elements</li>
+                            <li>Added <b>hover</b> styles to buttons and navigation links</li>
+                            <li>Applied <b>transition: all 0.3s</b> ease for smooth animations</li>
+                            <li>Designed scrollbar using <b>::-webkit-scrollbar</b></li>
+                        </ul><br>
+
+                    </p>
+
+                    <h3>Accessibility</h3>
+                        <p>All images in programme cards include descriptive <strong>alt</strong> attributes,
+                            All inputs have <strong> label</strong>  tags associated directly with the form fields to help assistive technologies and screen readers.
+                            The colours have good contrast, with light text on a dark background. The programme list and reviews can scroll, 
+                            so the page is not too long. Buttons and cards are big and easy to tap on mobile</p>
+                    
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST3.html#feedbackVal">Validation student_3</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                    <h3>Link to the page</h3>
+                        <p><a href="feedback.html">Feedback</a></p>
+            </section>
+
+            <section>
+                <h2 id="team">Team Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Team Page was designed using the shared website layout, including the fixed navigation bar and footer.
+                        Four team members are shown in cards, arranged using Flexbox so they line up neatly. 
+                        Each team member's details are displayed like this,
+                        <ul>
+                            <li>Each member's profile image</li>
+                            <li>Member's name</li>
+                            <li>Member's role</li>
+                            <li>A hidden details section that expands on hover</li>
+                        </ul>
+                        CSS hover effect is used to animate the cards
+                            <ul>
+                                <li>Increasing scale</li>
+                                <li>Applying box-shadow</li>
+                                <li>Slight upward movement</li>
+                            </ul>
+
+                        <p><strong>HTML Structure</strong>
+                            <ul>
+                                <li>Main tags - <b>Header , Nav , Main , Section , Footer</b></li>
+                            </ul><br>
+                            <strong>CSS Structure</strong>
+                            <ul>
+                                <li>Used <b>justify-content:</b>center to align team members</li>
+                                <li>Used <b>margin and padding</b> for perfect spacing</li>
+                                <li>Displayed hidden details when hovering over a card</li>
+                            </ul>
+                        </p>
+                        The page has a dark gradient background and soft, transparent cards to match the rest of the site. 
+                        The design works on all screen sizes, with round images, clear titles, and even spacing
+
+                    </p>
+                    <h3>Accessibility</h3>
+                        <p>The Team Page follows several accessibility practices to ensure all users can navigate and understand the content.
+                            Each team member's image includes descriptive <strong>alt</strong> text.Cards are keyboard-accessible using tabindex="0", 
+                            allowing users who cannot use a mouse to focus on each member.Large,clear headings <strong>(h1, h2)</strong>
+                            help screen readers understand the structure of the page.
+
+                        </p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST3.html#teamVal">Validation student_3</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="team.html">Team Page</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+
+                    <p>The Content Page was designed with a clear and logical structure.The page includes a consistent navigation area at the top, 
+                        allowing users to move easily between different sections of the website.The main content is organized in a clear and structured way. 
+                        It begins with an introduction, followed by several sections based on different topics. 
+                        Headings are used to show a clear order, making it easy for users to understand and follow the information.</p>
+                    <p><strong>HTML Structure</strong>
+                        <ul>
+                            <li>Main tags - <b>Header , Nav , Main , Article ,  Section , Footer</b></li>
+                            <li><b>nav</b> - Includes links to other pages</li>
+                            <li><b>article</b> - Used as the main container for the content page</li>
+                            <li><b>section</b> - Used to group related content</li>
+                            <li><b>a</b> - Used for navigation links and the “Back to Home” button</li>
+                        </ul><br>
+                        <strong>CSS Structure</strong>
+                        <ul>
+                            <li>Used a central container <b>.article-container</b> to control width and layout</li>
+                            <li>Applied a linear gradient background to maintain the ocean theme</li>
+                            <li>Styled headings with larger font sizes and colours (sky blue/light blue)</li>
+                            <li>Styled the “Back to Home” button with borders and rounded corners</li>
+                            <li>Used styled <b> hr </b> elements with gradient lines</li>
+                        </ul>
+                    </p>
+
+                    <h3>Accessibility</h3>
+                        <p>The webpage uses special HTML elements like <b> main , article , and section </b> to give the content a clear meaning. 
+                            All images have alternative text <b>alt text</b> so people who cannot see well can understand them. The page has high contrast colors, 
+                            with light text on a dark background, making it easier to read. Headings are clear and well organized, helping users, 
+                            especially those using screen readers, to find information easily.</p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST3.html#contentVal">validation student_3</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="content_pg3.html">Content_page2</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                <p>Challenges<br>
+                    <ol>
+                        <li><b>JavaScript Text Area Features</b><br>Adding a live character count in a text area needs careful coding. It must update every time the user types or deletes text, 
+                            and it should always show the correct number without breaking.</li>
+                        <li><b>Vertical Scrolling</b><br>Handling long pages with scrollable content needs careful testing. The scrolling should feel smooth,
+                             and the layout must stay correct on different devices.</li>
+                        <li><b>Hover Effects</b><br>Adding interactive effects when users hovered over buttons or links required precise CSS</li>
+                        <li><b>Margins & Padding</b><br>Getting the spacing between elements right was challenging. 
+                            Wrong margins or uneven padding can make the page look messy or unbalanced.</li>
+                    </ol>
+                </p>
+                <p>Learned
+                    <ol>
+                        <li><b>CSS Decorations</b><br>Learned how to use shadows, borders, blur effects, and backgrounds effectively to enhance visual appeal without compromising usability.</li>
+                        <li><b>Transitions</b><br>Learned how to add smooth animations to improve user experience and make interactions feel natural.</li>
+                        <li><b>Navigation Design</b><br>Learned to structure menus, links, and sections so users can easily find information.</li>
+                    </ol>
+                </p>
+            </section>
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                <p>The Content Page was created following responsible and ethical web practices. All content is suitable, educational, 
+                    and relevant to the project's theme of sustainable ocean practices. External resources and images were used carefully, 
+                    with correct attribution and no copyright violations. The page shows professional behavior by presenting original work and properly citing information sources. 
+                    Accessibility and usability were also considered, making the page inclusive for all users. This shows a commitment to producing web content that is safe, ethical, and trustworthy.</p>                    
+            </section>
+
+            <section>
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
+                    Requirements:
+                        <ul> 
+                            <li>A minimum of six (6) group meetings must be recorded.</li>
+                            <li>Each student must provide their own account of the meetings.</li>
+                            <li>The log must focus on individual contribution, not just group activity.</li>
+                        </ul>
+                        <p>Feel free to follow the example table structure below:</p>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20 Feb 2026</td>
+                                    <td>Online (Via Google Meet)</td>
+                                    <td>Introduction of the team members. Finalize site structure and navigation.</td>
+                                    <td>Yes</td>
+                                    <td>I have chosen to develop the feedback and team page. I stared at my works.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>23 Feb 2026</td>
+                                    <td>Online </td>
+                                    <td>Design Review</td>
+                                    <td>Yes</td>
+                                    <td>Suggested color theme and card styling for feedback and team sections. </td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>05 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Progress Review</td>
+                                    <td>Yes</td>
+                                    <td>Completed Feedback Page structure and presented to group</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>15 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Debugging Session</td>
+                                    <td>Yes</td>
+                                    <td>Improved the character counter script and refined interactive elements on the Team Page to ensure better keyboard accessibility.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>21 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Content Review</td>
+                                    <td>Yes</td>
+                                    <td>Finalized the content , validation , team and feedback pages </td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>20 Mar 2026</td>
+                                    <td>Online</td>
+                                    <td>Final Validation</td>
+                                    <td>Yes</td>
+                                    <td>Conducted W3C validation checks and confirmed accessibility and JANET compliance for all implemented pages.</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                    <ul class="ref">
+                        
+                        <strong><p>Impact simulator & Splash screen - learning</p></strong>
+                        
+                        <ul class="ref">
+                            <li>W3Schools (2026) <i>CSS Grid Layout</i>. Available at: 
+                            <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">
+                            https://www.w3schools.com/css/css_grid.asp</a> (Last accessed: 10 March 2026).</li>
+
+                            <li>W3Schools (2026) <i>JavaScript HTML DOM</i>. Available at: 
+                            <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">
+                            https://www.w3schools.com/js/js_htmldom.asp</a> (Last accessed: 10 March 2026).</li>
+
+                            <li>W3Schools (2026) <i>CSS Tutorial</i>. Available at: 
+                            <a href="https://www.w3schools.com/css/" target="_blank">
+                            https://www.w3schools.com/css/</a> (Last accessed: 12 March 2026).</li>
+
+                            <li>YouTube (2023) <i>JavaScript DOM Tutorial – Document Object Model</i>. Available at: 
+                            <a href="https://www.youtube.com/watch?v=WbG86sMd3SU" target="_blank">
+                            https://www.youtube.com/watch?v=WbG86sMd3SU</a> (Last accessed: 10 March 2026).</li>
+
+                            <li>YouTube (2023) <i>How to Create Website Layouts Using CSS Grid</i>. Available at: 
+                            <a href="https://www.youtube.com/watch?v=WbG86sMd3SU" target="_blank">
+                            https://www.youtube.com/watch?v=WbG86sMd3SU</a> (Last accessed: 12 March 2026).</li>
+                            <li>W3Schools (2026) <i>W3.CSS Progress Bars</i>. Available at: 
+                            <a href="https://www.w3schools.com/w3css/w3css_progressbar.asp" target="_blank">
+                            https://www.w3schools.com/w3css/w3css_progressbar.asp</a> (Last accessed: 22 March 2026).</li>
+
+                        </ul>
+                        
+                        <br>
+                        
+                        <strong><p>Impact simulator - Meida</p></strong>
+                        <ul class="ref">
+                        <li>Unsplash (n.d.) <i>Jute bags with printed designs hanging in sunlight</i>. Available at: 
+                        <a href="https://unsplash.com/photos/jute-bags-with-printed-designs-hanging-in-sunlight-CqHvvCB1WgE" target="_blank">
+                        https://unsplash.com/photos/jute-bags-with-printed-designs-hanging-in-sunlight-CqHvvCB1WgE</a> (Accessed: 22 March 2026).</li>
+
+                        <li>Unsplash (n.d.) <i>Man in blue crew neck t-shirt holding clear plastic bottle</i>. Available at: 
+                        <a href="https://unsplash.com/photos/man-in-blue-crew-neck-t-shirt-holding-clear-plastic-bottle--h4B4-jzfnw" target="_blank">
+                        https://unsplash.com/photos/man-in-blue-crew-neck-t-shirt-holding-clear-plastic-bottle--h4B4-jzfnw</a> (Accessed: 22 March 2026).</li>
+
+                        <li>Unsplash (n.d.) <i>Orange and white fish on white and black pebbles</i>. Available at: 
+                        <a href="https://unsplash.com/photos/orange-and-white-fish-on-white-and-black-pebbles-tHjXXy1kk_Q" target="_blank">
+                        https://unsplash.com/photos/orange-and-white-fish-on-white-and-black-pebbles-tHjXXy1kk_Q</a> (Accessed: 22 March 2026).</li>
+
+                        <li>Unsplash (n.d.) <i>A wooden sign that says stop plastic save earth</i>. Available at: 
+                        <a href="https://unsplash.com/photos/a-wooden-sign-that-says-stop-plastic-save-earth-lf7UohVEk44" target="_blank">
+                        https://unsplash.com/photos/a-wooden-sign-that-says-stop-plastic-save-earth-lf7UohVEk44</a> (Accessed: 22 March 2026).</li>
+
+                        <li>Unsplash (n.d.) <i>Body of water during golden hour</i>. Available at: 
+                        <a href="https://unsplash.com/photos/body-of-water-during-golden-hour-oQl0eVYd_n8" target="_blank">
+                        https://unsplash.com/photos/body-of-water-during-golden-hour-oQl0eVYd_n8</a> (Accessed: 22 March 2026).</li>
+
+                        <li>Unsplash (n.d.) <i>A group of people standing in front of a large aquarium</i>. Available at: 
+                        <a href="https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-large-aquarium-o2W3NlKlP0o" target="_blank">
+                        https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-large-aquarium-o2W3NlKlP0o</a> (Accessed: 22 March 2026).</li>
+
+                        <li>Unsplash (n.d.) <i>A large amount of ice floating on top of a body of water</i>. Available at: 
+                        <a href="https://unsplash.com/photos/a-large-amount-of-ice-floating-on-top-of-a-body-of-water-y9EVABdWo90" target="_blank">
+                        https://unsplash.com/photos/a-large-amount-of-ice-floating-on-top-of-a-body-of-water-y9EVABdWo90</a> (Accessed: 22 March 2026).</li>
+
+                        <li>Unsplash (n.d.) <i>Group of people on beach during daytime</i>. Available at: 
+                        <a href="https://unsplash.com/photos/group-of-people-on-beach-during-daytime-uXfYLTmF6fo" target="_blank">
+                        https://unsplash.com/photos/group-of-people-on-beach-during-daytime-uXfYLTmF6fo</a> (Accessed: 22 March 2026).</li>
+                        </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                
+                <li>Student 3</li>
+                <ul> 
+                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="#team">Team Page</a></li>
+                    <li><a href="#content">Content</a></li>
+                </ul>
+                    
+               
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="footer">
+            <div class="footer-container">
+                
+                <div class="footer-about">
+                    <h2>Blue Horizon</h2>
+                    <p>Promoting awareness and action for UN Sustainable Development Goal 14: Life Below Water. <br>
+                        Together, we protect our oceans for future generations.</p>
+                </div>
+
+                <div class="footer-name">
+                    <h3>Students Name</h3>
+                    <p>Vimuth Perera</p>
+                    <p>Bihara Jayawardhana</p>
+                    <p>Janin Bandara</p>
+                    <p>Akash Karunakaran</p>
+                </div>
+
+                <div class="footer-Slinks">
+                    <h3>Students</h3>
+                    <a href="pageEditor_ST1.html">Student 1</a>
+                    <a href="pageEditor_ST2.html">Student 2</a>
+                    <a href="pageEditor_ST3.html">Student 3</a>
+                    <a href="pageEditor_ST4.html">Student 4</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Validation</h3>
+                    <a href="validation_ST1.html">Validation 1</a>
+                    <a href="validation_ST2.html">Validation 2</a>
+                    <a href="validation_ST3.html">Validation 3</a>
+                    <a href="validation_ST4.html">Validation 4</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Blue Horizon | University of Westminster</p>
+            </div>
+        </footer>
+</body>
+</html>
