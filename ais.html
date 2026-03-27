@@ -13,6 +13,7 @@
             background: linear-gradient(to bottom, #001220, #001f3f, #000000);
             color: white;
             background-attachment: fixed
+        
         }
 
         .ais-header h1{
@@ -152,11 +153,8 @@
             border: 1px solid skyblue;
             text-align: center;
             margin: 40px 40px ;
-            background-size:cover;
-             background-position: center;
-             background-attachment: fixed;
-             transition: background-image 0.5s ease;   
-            }
+
+        }
 
 
         .feedback-area h2 {
@@ -447,29 +445,35 @@
                 const levelText = document.getElementById('impact-level');
                 const msgText = document.getElementById('impact-message');
                 const body = document.body;
-
-                const feedbackarea = document.querySelector('.feedback-area');
-
-                const overlay = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), ";
+                const overlay = "linear-gradient(to bottom, rgba(0, 18, 32, 0.8), rgba(0, 31, 63, 0.8), rgba(0, 0, 0, 0.8))";
 
                 if (totalImpact === 0) {
                     levelText.textContent = "Impact Level: None Selected";
                     msgText.textContent = "Start clicking cards to calculate your impact!";
-                    feedbackarea.style.backgroundImage ="none";
-                    feedbackarea.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
-
+                    body.style.background = "none";
+                    body.style.backgroundImage = overlay + ", url('images/ais-bg0.jpg')";
+                    //https://unsplash.com/photos/seashore-during-golden-hour-KMn4VEeEPR8
                 } else if (totalImpact <= 10) {
                     levelText.textContent = "Impact Level: Low Impact";
                     msgText.textContent = "Great start! Your actions are making a positive difference for our oceans.";
-                    feedbackarea.style.backgroundImage = overlay + "url('ais-bg1.jpg')";
+                    body.style.background = "none";
+                    body.style.backgroundImage = overlay + ", url('images/ais-bg1.jpg')";
+                    //https://unsplash.com/photos/view-of-a-rocky-island-through-a-cave-entrance-LMsbOD8Qsfc
+                    body.style.backgroundSize = "cover";
                 } else if (totalImpact <= 20) {
                     levelText.textContent = "Impact Level: Moderate Impact";
                     msgText.textContent = "Amazing! Your commitment is helping to protect marine life and ecosystems.";
-                    feedbackarea.style.backgroundImage =  overlay + "url('images/ais-bg2.jpg')";
+                    body.style.background = "none";
+                    body.style.backgroundImage = overlay + ", url('images/ais-bg2.jpg')";
+                    body.style.backgroundSize = "cover";
+                    //https://unsplash.com/photos/a-large-aquarium-filled-with-lots-of-colorful-fish-L5krV5BkAuQ
                 } else {
                     levelText.textContent = "Impact Level: High Impact";
                     msgText.textContent = "Incredible! You are a true champion for ocean conservation!";
-                    feedbackarea.style.backgroundImage = overlay + "url('images/ais-bg3.jpg')";
+                    body.style.background = "none";
+                    body.style.backgroundImage = overlay + ", url('images/ais-bg3.jpg')";
+                    body.style.backgroundSize = "cover";
+                    //https://unsplash.com/photos/a-view-of-the-ocean-from-the-top-of-a-hill-KDWkIs4GFQM
                 }
             }
 
