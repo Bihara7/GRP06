@@ -6,6 +6,7 @@
     <meta http-equiv="refresh" content="4; url=home.html">
     <title>Blue Horizon</title>
 
+    <!--Style part for splash screen-->
     <style>
         body {
             margin: 0;
@@ -13,7 +14,6 @@
             background: linear-gradient(to bottom, #001220, #001f3f, #000000);
             color: white;
             background-attachment: fixed;
-        
             display: flex;
             justify-content: center;   
             align-items: center;       
@@ -51,7 +51,7 @@
             margin-left: 20px;
             font-size: 18px;
         }
-
+        /*Get Cards into a row*/
         .cardRow{
             display: flex;
             gap: 10px;
@@ -73,7 +73,7 @@
         .card2 hr{
             margin-top: 0px;
         }
-
+        /*Button for skip*/
         button{
             position: absolute;
             right: 50px;
@@ -98,7 +98,7 @@
             margin-right: 10%;
             margin-top: 20px;
         }
-       
+       /*Create an empty rectangle with rounded edges as a bar*/
         .bar{
             width: 80%;
             height:20px;
@@ -107,7 +107,7 @@
             border-radius:10px;
             overflow:hidden;
         }
-
+        /*Use linear forward animation to fill the bar with a color*/
         .fill{
             height:100%;
             width:0%;
@@ -138,7 +138,7 @@
 <body>
     <img src="images/splashimg.jpg" alt="Photo by Tom Fisk: https://www.pexels.com/photo/a-school-of-fish-swimming-under-the-sea-4618220/" class="bg">
     
-<div class="card">
+<div class="card"><!--Main Card-->
     
     <img src="images/LOGOW.png" alt="Blue Horizon Logo" class="logo">
     <hr>
@@ -148,7 +148,8 @@
     <div class="bar">
         <div class="fill"></div>
     </div>
-    <p id="countdown">Entering site in 4...</p>
+    <p id="countdown">Entering site in 4...</p><!--A counter that gonna be changing only the number by JS -->
+    <!--The cards that include group members' names that showed horizontally-->
     <div class="members">
         <h3>Group Members : </h3>
         <div class="cardRow">
@@ -171,14 +172,14 @@
     </div>
     </div>
 </div>
-    <button onclick="window.location.href='home.html';">skip Intro</button>
+    <button onclick="window.location.href='home.html';">skip Intro</button><!--When button clicks it directed to home page-->
     <script>
 
-        let time = 4;
+        let time = 4; //variable for time
         let countdown = document.getElementById("countdown");
 
         let timer = setInterval(function(){
-            time--;
+            time--;//Timer will decrease from 4 to 0
             countdown.textContent = "Entering site in " + time + "...";
 
             if(time <= 0){
