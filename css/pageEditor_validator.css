@@ -173,27 +173,6 @@ nav img{
     line-height: 1.8;
 }
 
-.ref li{
-    list-style: none;
-    padding-bottom: 9px;
-}
-
-aside a{
-    text-decoration : none;
-}
-
-aside li{
-    padding-bottom: 4px;
-}
-
-.stud {
-    text-align: center;
-    line-height: 0;
-    background-color: #cbccc2ef;
-    color: white;
-    margin-top: 8px;
-}
-
 .top {
     position: fixed;
     bottom: 5%;
