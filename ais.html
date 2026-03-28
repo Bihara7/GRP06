@@ -31,13 +31,14 @@
 
         }
 
+        /* Style for the horizontal rule */
         hr {
             border: 0;
             height: 1px;
             background: rgba(6, 46, 61);
             margin: 40px 0;
         }
-
+        /* Style for the action method section */
         .action-method{
             background: rgba(0, 0, 0, 0.85);
             padding: 20px;
@@ -68,6 +69,7 @@
             padding: 0 40px;
         }
 
+        /* Style for individual action cards */
         .simulator-grid .action-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(135, 206, 235, 0.2);
@@ -105,7 +107,7 @@
             background: white;
             margin: 20px 0;
         }
-
+        /* Style for the impact points section within each action card */
         .simulator-grid .action-card .impact-points {
             background: rgba(135, 206, 235, 0.1);
             border: 1px solid rgba(135, 206, 235, 0.3);
@@ -147,6 +149,7 @@
             box-shadow: 0 0 20px rgba(135, 206, 235, 0.4);
         }
 
+        /* Style for the feedback area below the action cards */
         .feedback-area {
             background: rgba(0, 0, 0, 0.85);
             padding: 30px;
@@ -178,6 +181,7 @@
             box-shadow: skyblue 0px 0px 10px;
         }
 
+        /* Style for the impact score display within the feedback area */
         .score-display {
             font-size: 2.5rem;
             color: skyblue;
@@ -191,12 +195,14 @@
             font-weight: bold;
         }
 
+        /* Responsive adjustments for smaller screens */
         @media (max-width: 800px) {
             .simulator-grid {
                 grid-template-columns: 1fr;
             }
         }
 
+        /* Hover effect for action cards */
         .action-card:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: skyblue;
@@ -238,6 +244,7 @@
             <div class="simulator-grid">
                 <!-- Action Cards -->  
                 <div class="action-card" onclick="updateImpact(this,4)">
+                    <!-- Action Card for Reusable Bags -->
                     <img src="images/ais1.jpg" alt="Use Reusable Bags - https://unsplash.com/photos/jute-bags-with-printed-designs-hanging-in-sunlight-CqHvvCB1WgE">
                     <h3>Use Reusable Bags</h3>
                     <p>Commit to using reusable bags for shopping to reduce plastic waste.</p>
@@ -257,11 +264,13 @@
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,5)">
+                    <!-- Action Card for Beach Cleanup -->
                     <img src="images/ais2.jpg" alt="Participate in Beach Cleanups - https://unsplash.com/photos/man-in-blue-crew-neck-t-shirt-holding-clear-plastic-bottle--h4B4-jzfnw">
                     <h3>Participate in Beach Cleanups</h3>
                     <p>Join local beach cleanup events to help remove plastic from shorelines.</p>
                     <hr>
                     <div class="impact-points">
+                        <!-- Visual representation of impact points -->
                         <div class="points-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -274,11 +283,13 @@
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,3)">
+                    <!-- Action Card for Sustainable Seafood -->
                     <img src="images/ais3.jpg" alt="Choose Sustainable Seafood - https://unsplash.com/photos/orange-and-white-fish-on-white-and-black-pebbles-tHjXXy1kk_Q">
                     <h3>Choose Sustainable Seafood</h3>
                     <p>Opt for sustainably sourced seafood to support ocean-friendly fishing practices.</p>
                     <hr>
                     <div class="impact-points">
+                        <!-- Visual representation of impact points -->
                         <div class="points-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -291,11 +302,13 @@
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,4)">
+                    <!-- Action Card for Reducing Single-Use Plastics -->
                     <img src="images/ais4.jpg" alt="Reduce Single-Use Plastics - https://unsplash.com/photos/a-wooden-sign-that-says-stop-plastic-save-earth-lf7UohVEk44">
                     <h3>Reduce Single-Use Plastics</h3>
                     <p>Avoid single-use plastics like straws and cutlery to minimize ocean pollution.</p>
                     <hr>
                     <div class="impact-points">
+                        <!-- Visual representation of impact points -->
                         <div class="points-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -308,11 +321,13 @@
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,5)">
+                    <!-- Action Card for Supporting Ocean Conservation -->
                     <img src="images/ais5.jpg" alt="Support Ocean Conservation - https://unsplash.com/photos/body-of-water-during-golden-hour-oQl0eVYd_n8">
                     <h3>Support Ocean Conservation</h3>
                     <p>Donate to or volunteer with organizations working to protect marine ecosystems.</p>
                     <hr>
                     <div class="impact-points">
+                        <!-- Visual representation of impact points -->
                         <div class="points-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -325,11 +340,13 @@
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,3)">
+                    <!-- Action Card for Educating Others -->
                     <img src="images/ais6.jpg" alt="Educate Others - https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-large-aquarium-o2W3NlKlP0o">
                     <h3>Educate Others</h3>
                     <p>Share information about ocean conservation with friends and family.</p>
                     <hr>
                     <div class="impact-points">
+                        <!-- Visual representation of impact points -->
                         <div class="points-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -342,11 +359,13 @@
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,2)">
+                    <!-- Action Card for Combatting Climate Change -->
                     <img src="images/ais7.jpg" alt="Help Combat Climate Change - https://unsplash.com/photos/a-large-amount-of-ice-floating-on-top-of-a-body-of-water-y9EVABdWo90">
                     <h3>Help Combat Climate Change</h3>
                     <p>Take steps to reduce your carbon emissions and support climate action.</p>
                     <hr>
                     <div class="impact-points">  
+                        <!-- Visual representation of impact points -->
                         <div class="points-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -359,11 +378,13 @@
                 </div>
 
                 <div class="action-card" onclick="updateImpact(this,4)">
+                    <!-- Action Card for Engaging in Fundraising -->
                     <img src="images/ais8.jpg" alt="Engage in Fundraising - https://unsplash.com/photos/group-of-people-on-beach-during-daytime-uXfYLTmF6fo">
                     <h3>Engage in Fundraising</h3>
                     <p>Support ocean conservation efforts through donations and fundraising activities.</p>
                     <hr>
                     <div class="impact-points">
+                        <!-- Visual representation of impact points -->
                         <div class="points-dots">
                             <div class="dot filled"></div>
                             <div class="dot filled"></div>
@@ -388,8 +409,7 @@
 
         <footer class="footer">
             <div class="footer-container">
-
-
+                
                 <div class="footer-about">
                     <h2>Blue Horizon</h2>
                     <p>Promoting awareness and action for UN Sustainable Development Goal 14: Life Below Water. <br>
@@ -418,14 +438,6 @@
                     <a href="validation_ST2.html">Validation 2</a>
                     <a href="validation_ST3.html">Validation 3</a>
                     <a href="validation_ST4.html">Validation 4</a>
-                </div>
-
-                <div class="footer-Stid">
-                    <h3>Student ID</h3>
-                    <p>20241115</p>
-                    <p>20241163</p>
-                    <p>20241037</p>
-                    <p>20241916</p>
                 </div>
 
             </div>
