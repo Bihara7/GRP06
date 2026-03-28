@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="Style.css">
 
     <style>
+        /* Additional styles specific to the Impact Simulator page */   
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
@@ -221,24 +222,27 @@
         </header>
 
         <main>
+            <!-- Impact Simulator Content -->   
             <div class="ais-header">
                 <h1>Impact Simulator</h1>
                 <p>Select the ocean-positive actions you commit to taking. Every choice adds up - see how your impact grows</p>
             </div>
 
             <hr>
-
+            <!-- Action Cards Grid -->
             <div class="action-method">
                 <h2>How It Works</h2>
                 <p>Click on the actions below to add them to your impact score. Each action has a point value based on its positive effect on ocean conservation. The more actions you select, the higher your score - and the greater your impact!</p>
             </div>
 
             <div class="simulator-grid">
+                <!-- Action Cards -->  
                 <div class="action-card" onclick="updateImpact(this,4)">
                     <img src="images/ais1.jpg" alt="Use Reusable Bags - https://unsplash.com/photos/jute-bags-with-printed-designs-hanging-in-sunlight-CqHvvCB1WgE">
                     <h3>Use Reusable Bags</h3>
                     <p>Commit to using reusable bags for shopping to reduce plastic waste.</p>
                     <hr>
+                    <!-- Visual representation of impact points -->
                     <div class="impact-points">
                         <div class="points-dots">
                             <div class="dot filled"></div>
@@ -247,6 +251,7 @@
                             <div class="dot filled"></div>
                             <div class="dot"></div> 
                         </div>
+                        <!-- Display the impact points for this action -->
                         <p><strong>Impact: 4 Points</strong></p>
                     </div>
                 </div>
@@ -371,7 +376,7 @@
                 </div>
 
             </div>
-
+                <!-- Feedback Area -->
                 <div class="feedback-area">
                     <h2>Your Sustainability Impact</h2>
                     <div class="score-display" id="total-score">0</div>
@@ -422,6 +427,7 @@
         </footer>
 
         <Script>
+            // JavaScript for Impact Simulator functionality
             let totalImpact = 0;
 
             function updateImpact(cardElement, points) {
@@ -441,10 +447,13 @@
             }
 
             function updateFeedback(){
-
+                // Update feedback message and background based on total impact score
                 const levelText = document.getElementById('impact-level');
+                // Access the message element to update the feedback text
                 const msgText = document.getElementById('impact-message');
+                // Access the body element to change the background
                 const body = document.body;
+                // Define a consistent overlay for all backgrounds to enhance text readability
                 const overlay = "linear-gradient(to bottom, rgba(0, 18, 32, 0.8), rgba(0, 31, 63, 0.8), rgba(0, 0, 0, 0.8))";
 
                 if (totalImpact === 0) {
@@ -476,7 +485,7 @@
                     //https://unsplash.com/photos/a-view-of-the-ocean-from-the-top-of-a-hill-KDWkIs4GFQM
                 }
             }
-
+            // Function to reset the simulator
             function resetSimulator() {
                 totalImpact = 0;
                 document.getElementById('total-score').textContent = totalImpact;
